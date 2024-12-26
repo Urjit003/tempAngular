@@ -8,8 +8,8 @@ import { FormsModule } from '@angular/forms';
   imports: [FormsModule, CommonModule],
   template: `
     <h3>Palindrome Checker</h3>
-    <input type="text" [(ngModel)]="input" placeholder="Enter a word" />
-    <button (click)="checkPalindrome()">Check</button>
+    <input type="text" [(ngModel)]="input" placeholder="Enter a word" (change)="checkPalindrome($event)" />
+    <!-- <button (click)="checkPalindrome()">Check</button> -->
 
     <div *ngIf="isPalindrome !== null">
       <p *ngIf="isPalindrome">✔ "{{ input }}" is a Palindrome.</p>
@@ -22,7 +22,8 @@ export class PalindromeComponent {
   input: string = '';
   isPalindrome: boolean | null = null;
 
-  checkPalindrome() {
+  checkPalindrome(e : Event) {
+    this.input = (e.target as HTMLInputElement) .value;
     const reversed = this.input.split('').reverse().join('');
     this.isPalindrome = this.input === reversed;
   }
