@@ -5,11 +5,12 @@ import { PalindromeComponent } from "./palindrome/palindrome.component";
 import { ChessBoarddComponent } from "./chess-boardd/chess-boardd.component";
 import { TicTacToeComponent } from "./tic-tac-toe/tic-tac-toe.component";
 import { StonePaperScissorsComponent } from "./stone-paper-scissor/stone-paper-scissor.component";
+import { PyramidComponent } from "./pyramid/pyramid.component";
 @Component({
   selector: 'app-root',
   standalone: true,
   
-  imports: [RouterOutlet, UserComponentComponent, PalindromeComponent, ChessBoarddComponent, TicTacToeComponent, StonePaperScissorsComponent],
+  imports: [RouterOutlet, UserComponentComponent, PalindromeComponent, ChessBoarddComponent, TicTacToeComponent, StonePaperScissorsComponent, PyramidComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
