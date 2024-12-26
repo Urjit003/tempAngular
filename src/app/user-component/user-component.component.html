@@ -1,0 +1,43 @@
+<!-- Property binding => [ ] -->
+
+<p>user-component works!</p>
+
+<h4>
+    interpolation of name {{ name.toUpperCase() }} , salary {{ salary }} , status
+    {{ status.toLocaleLowerCase() }}
+</h4>
+<button [disabled]="isBtnDisabled">Click me</button>
+<button (click)="inverseBtn()">Click me to {{isBtnDisabled ? "enable" : "disable"}} the left button</button>
+<hr />
+<!-- <input type="text" value="{{text}}" (input)="onInputChange($event)" placeholder="Enter your name"> -->
+<input type="text" [(ngModel)]="text" />
+<hr />
+
+<label for="">hello {{ text }}</label>
+<hr />
+<label for="">Click to show lists</label> 
+<br>
+<button (click)="inverseList()">{{shouldShowList ? "show" : "hide"}} list</button>
+<div *ngIf="shouldShowList">
+    <div class="" *ngFor="let _ of users">
+        <h4 *ngIf="_.isSingle;else elseBlock"> {{_.name}} is single </h4>
+        <ng-template #elseBlock>
+            <h4>{{_.name}} is not single</h4>
+        </ng-template>
+    </div>
+</div>
+<hr>
+<h1>The time {{today | date:'medium'}}</h1>
+<h2>*ngSwitch Example</h2>
+<select [(ngModel)]="currentFramework">
+  <option value="Angular">Angular</option>
+  <option value="React">React</option>
+  <option value="Vue">Vue</option>
+</select>
+
+<div [ngSwitch]="currentFramework">
+  <p *ngSwitchCase="'Angular'">You selected Angular!</p>
+  <p *ngSwitchCase="'React'">You selected React!</p>
+  <p *ngSwitchCase="'Vue'">You selected Vue!</p>
+  <p *ngSwitchDefault>Please select a framework.</p>
+</div>

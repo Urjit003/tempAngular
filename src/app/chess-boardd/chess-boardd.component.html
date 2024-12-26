@@ -1,0 +1,56 @@
+<h3>Chessboard</h3>
+<div id="chessboard"></div>
+
+<script>
+  function generateChessBoard(size) {
+    const chessboard = document.getElementById('chessboard');
+    chessboard.innerHTML = '';
+    chessboard.style.display = 'grid';
+    chessboard.style.gridTemplateColumns = `repeat(${size}, 50px)`;
+
+    for (let i = 0; i < size * size; i++) {
+      const cell = document.createElement('div');
+      cell.style.width = '50px';
+      cell.style.height = '50px';
+      cell.style.backgroundColor = (Math.floor(i / size) + i) % 2 === 0 ? 'black' : 'white';
+      chessboard.appendChild(cell);
+    }
+  }
+
+  generateChessBoard(8); // Default size
+</script>
+
+<style>
+  #chessboard div {
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+  }
+</style>
+<h3>Chessboard</h3>
+<div id="chessboard"></div>
+
+<script>
+  function generateChessBoard(size) {
+    const chessboard = document.getElementById('chessboard');
+    chessboard.innerHTML = '';
+    chessboard.style.display = 'grid';
+    chessboard.style.gridTemplateColumns = `repeat(${size}, 50px)`;
+
+    for (let i = 0; i < size * size; i++) {
+      const cell = document.createElement('div');
+      cell.style.width = '50px';
+      cell.style.height = '50px';
+      cell.style.backgroundColor = (Math.floor(i / size) + i) % 2 === 0 ? 'black' : 'white';
+      chessboard.appendChild(cell);
+    }
+  }
+
+  generateChessBoard(8); // Default size
+</script>
+
+<style>
+  #chessboard div {
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+  }
+</style>
