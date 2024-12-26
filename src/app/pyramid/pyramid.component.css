@@ -10,7 +10,12 @@ input[type='number'] {
 }
 
 .pyramid {
-  font-family: monospace;
-  white-space: pre;
+  font-family: monospace; /* Ensure consistent spacing */
   margin-top: 20px;
+  display: inline-block; /* Center align the pyramid */
+  text-align: left; /* Prevent centering within each line */
+}
+
+.pyramid-line {
+  white-space: pre; /* Preserve spaces exactly as provided */
 }

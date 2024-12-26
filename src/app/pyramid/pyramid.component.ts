@@ -12,7 +12,9 @@ import { FormsModule } from '@angular/forms';
       <input id="rows" type="number" [(ngModel)]="rows" min="1" (input)="generatePyramid()" />
 
       <div *ngIf="pyramid.length > 0" class="pyramid">
-        <pre *ngFor="let line of pyramid">{{ line }}</pre>
+        <div *ngFor="let line of pyramid" class="pyramid-line">
+          {{ line }}
+        </div>
       </div>
     </div>
   `,
